@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0 (2026-10-26)
+
+### New
+- New subscription page: Persian/RTL, light and dark themes, usage ring, Jalali expiry date, copy/QR for the subscription and each config, one-tap import for Hiddify, v2rayNG and Streisand
+- QR codes are rendered on the server (no external CDN needed)
+- New template filters: `jalali`, `link_name`, `qr_svg`
+
 ## v1.0.0 (2026-10-26)
 
 First release of Pasban, a rebranded fork of [Marzban](https://github.com/Gozargah/Marzban) v0.8.4.
