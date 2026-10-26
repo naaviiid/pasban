@@ -127,8 +127,11 @@ cmd_install() {
     write_compose
     install_script
     yellow "Starting $APP_NAME (first build can take a few minutes)..."
-    if [ -n "$IMAGE" ]; then compose pull; else compose build; fi
-    compose up -d
+    # On failure, drop the compose file so the install command can simply be run again
+    if ! { if [ -n "$IMAGE" ]; then compose pull; else compose build; fi && compose up -d; }; then
+        rm -f "$COMPOSE_FILE"
+        die "Install failed (see the error above). Fix it and run '$APP_NAME install' again."
+    fi
     green "$APP_NAME installed."
     echo
     echo "  Config    : $ENV_FILE"

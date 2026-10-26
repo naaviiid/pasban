@@ -15,8 +15,10 @@ case "$(uname -m)" in
 esac
 
 if [ "$VERSION" = "latest" ]; then
-  VERSION="$(curl -fsSL https://api.github.com/repos/XTLS/Xray-core/releases/latest \
-    | grep -m1 '"tag_name"' | cut -d '"' -f4)"
+  # Follow the /releases/latest redirect to read the tag (no API rate limit, no broken pipe)
+  LATEST_URL="$(curl -fsSL -o /dev/null -w '%{url_effective}' https://github.com/XTLS/Xray-core/releases/latest)"
+  VERSION="${LATEST_URL##*/}"
+  [ -n "$VERSION" ] && [ "$VERSION" != "latest" ] || { echo "Could not detect latest Xray version" >&2; exit 1; }
 fi
 
 URL="https://github.com/XTLS/Xray-core/releases/download/${VERSION}/Xray-linux-${ARCH}.zip"
