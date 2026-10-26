@@ -13,6 +13,7 @@ licensed under the GNU Affero General Public License v3.0 (see `LICENSE`).
 - Xray is installed by a bundled script (`scripts/install_xray.sh`) from the official XTLS releases
 - New management/installer script (`scripts/pasban.sh`); `docker-compose.yml` builds from source
 - CI publishes images to the GitHub Container Registry of the repository owner
+- Bug fixes for Xray 25.8+ REALITY keys and setuptools 81+ (see CHANGELOG.md)
 
 The node TLS server name (`Gozargah` in `app/xray/node.py` and `app/utils/crypto.py`)
 is intentionally unchanged so Pasban stays compatible with Marzban-node.
