@@ -158,6 +158,7 @@ xray-core
 *-custom.yml
 *-dev.json
 *-dev.yml
+!.github/workflows/build-dev.yml
 *-dev.yaml
 *-debug.*
 
