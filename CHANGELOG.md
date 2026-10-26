@@ -23,6 +23,7 @@ First release of Pasban, a rebranded fork of [Marzban](https://github.com/Gozarg
 ### Tested
 Fresh install on Ubuntu (x86_64) with the one-line installer; admin creation; VLESS + REALITY inbound;
 user creation; v2ray / Clash Meta / sing-box subscriptions; a real client connection through REALITY;
-traffic accounting; `status`, `restart`, `update`.
+traffic accounting; `status`, `restart`, `update`, `uninstall` (data kept); install from the prebuilt
+image `ghcr.io/naaviiid/pasban:v1.0.0`.
 
-Not yet tested: SSL setup, nodes, Telegram bot, `uninstall`, arm64.
+Not yet tested: SSL setup, nodes, Telegram bot, running on arm64.
