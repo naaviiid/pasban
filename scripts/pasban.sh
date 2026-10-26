@@ -77,8 +77,9 @@ install_script() {
 
 fetch_source() {
     if [ -d "$SRC_DIR/.git" ]; then
+        # The clone is shallow and single-branch, so use FETCH_HEAD (works for any branch)
         git -C "$SRC_DIR" fetch --depth 1 origin "$REPO_BRANCH"
-        git -C "$SRC_DIR" reset --hard "origin/$REPO_BRANCH"
+        git -C "$SRC_DIR" reset --hard FETCH_HEAD
     else
         rm -rf "$SRC_DIR"
         git clone --depth 1 -b "$REPO_BRANCH" "$REPO_URL" "$SRC_DIR"

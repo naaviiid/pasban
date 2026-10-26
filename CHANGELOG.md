@@ -17,6 +17,7 @@ First release of Pasban, a rebranded fork of [Marzban](https://github.com/Gozarg
 - The app failed to start with setuptools 81+ (`pkg_resources` removed); APScheduler upgraded to 3.10.4
 - Docker build no longer fails when detecting the latest Xray version (broken pipe in `curl | grep`)
 - A failed install can now be re-run with the same install command
+- `PASBAN_BRANCH=<branch> pasban update` now works for branches other than the one first installed
 - CI updated to current GitHub Actions versions and Node.js 20
 
 ### Tested
