@@ -1,0 +1,11 @@
+services:
+  pasban:
+    # Builds the image from this source. To use a prebuilt image instead,
+    # replace `build: .` with e.g. `image: ghcr.io/naaviiid/pasban:latest`
+    build: .
+    image: pasban:latest
+    restart: always
+    env_file: .env
+    network_mode: host
+    volumes:
+      - /var/lib/pasban:/var/lib/pasban
